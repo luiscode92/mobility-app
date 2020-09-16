@@ -1,4 +1,4 @@
-# mobility App
+# Mobility App
 
 This repository contains the source code of a Mobility-app that shows busses routes according to the user's location and the user's destination, and return, the time that is going to take to the bus to arrive 
 
@@ -24,9 +24,9 @@ This repository contains the source code of a Mobility-app that shows busses rou
 
 ## Backend
 
--Nodejs
--Mongodb
--firebase
+- Nodejs
+- Mongodb
+- firebase
 
 
 

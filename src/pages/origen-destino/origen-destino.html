@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar color="azulJectapp">
+
+  	<ion-buttons end>
+			<button ion-button
+					icon-only
+					(click)="viewCtrl.dismiss(false)">
+				<ion-icon name="close"></ion-icon>
+			</button>
+	</ion-buttons>
+
+    <ion-title>¿A donde quieres ir?</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<form [formGroup]="myForm" (ngSubmit)="getAllRutas()" [@itemState]="animation" *ngIf="animation !== null">
+
+
+		<ion-list>
+
+			<ion-item>
+				<ion-label><b>Origen:</b></ion-label>
+			</ion-item>
+			<ion-auto-complete [dataProvider]="completeTestService" [options]="{ placeholder : 'Barrio de origen ...' }" formControlName="origen"></ion-auto-complete>
+
+			<ion-item>
+				<ion-label><b>Destino:</b></ion-label>
+			</ion-item>
+			<ion-auto-complete [dataProvider]="completeTestService" [options]="{ placeholder : 'Barrio de destino ...' }" formControlName="destino"></ion-auto-complete>
+
+		</ion-list>
+
+		<button ion-button block  type="submit" color="azulJectapp" [disabled]="!myForm.valid">Buscar Rutas ...</button>
+	
+		<br><br>
+
+	</form>
+
+
+	<ion-card *ngFor="let data of rutasFinal">
+		<ion-list>
+
+			<div (click)="goToMap(data)">
+				<button ion-item text-wrap>
+					<ion-icon name="bus" [color]="cambioColorRuta(data.empresa)" item-start></ion-icon>
+					<b>RUTA: {{ data.nombre | uppercase }} </b><br>
+					<b>EMPRESA: {{ data.empresa | uppercase}}</b><br>
+				</button>
+				<ion-list text-wrap no-border>
+					<ion-list-header>
+						<b>BARRIOS:</b>
+					</ion-list-header>
+					<ion-item *ngFor="let b of data.barrios"><b>- {{ b }}</b> </ion-item>
+				</ion-list>
+			</div>
+
+		</ion-list>
+	</ion-card>
+
+	<ion-list *ngIf="animation === 'out'">
+		<p align="center" style="color: #e13838; font-size: 18px;"><b>No se encontraron rutas con los filtros registrados.</b></p>
+	</ion-list>
+
+
+
+</ion-content>
+
+<ion-footer>
+	<button ion-button block color="azulJectapp" *ngIf="animation === null" (click)="nuevaRuta()">Nueva Ruta</button>
+</ion-footer>

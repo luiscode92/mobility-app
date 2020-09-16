@@ -1,0 +1,42 @@
+page-olvido-pass {
+
+	.reestablecer{
+		position: absolute;
+		left: 135px; 
+		top: 30px;
+	}
+
+	.datosUsuario{
+		position: absolute;
+		left: 30px; 
+		top: 120px;
+		width: 300px;
+	}
+
+	.fondoInput{	
+		background-color:  #C9E6EE;
+	}
+
+	.inputColor{
+		color: #1F365B;
+		font-weight:bold;
+
+	}
+
+	.botonRegistro{
+		color: white;
+		background: #1F365B;
+		float:none;
+		text-align:center;
+		margin: auto; 
+		display: block;
+		width:100%;
+	}
+
+	.parrafo{
+		font-size:0.9em;
+		font-style: italic;
+		text-align: center;
+	}
+
+}

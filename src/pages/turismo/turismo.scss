@@ -1,0 +1,28 @@
+page-turismo {
+  .styleParrafoTurismo {
+    text-align: justify;
+    text-justify: inter-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .styleParrafoTurismoVerMas {
+    text-align: justify;
+    text-justify: inter-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #1F365B;
+    opacity: 1;
+  }
+
+
+
+}

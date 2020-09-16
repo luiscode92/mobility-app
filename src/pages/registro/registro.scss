@@ -1,0 +1,54 @@
+page-registro {
+
+	.Camara{
+		position: absolute;
+		left: 135px; 
+		top: 30px;
+	}
+
+	.datosUsuario{
+		position: absolute;
+		width: 100%;
+		padding: 3%;
+	}
+
+	.fondoInput{	
+		background-color:  #C9E6EE;
+	}
+
+	.inputColor{
+		color: #1F365B;
+		font-weight:bold;
+
+	}
+
+	.botonRegistro{
+		color: white;
+		background: #1F365B;
+		float:none;
+		text-align:center;
+		margin: auto; 
+		display: block;
+		width:100%;
+	}
+
+	.parrafo{
+		font-size:0.9em;
+		font-style: italic;
+		text-align: center;
+	}
+
+	.error{
+		font-size:0.7em;
+		font-style: italic;
+		text-align: justify;
+		color: red;
+	}
+
+	.attrLabel {
+		padding-left: 10px;
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+}

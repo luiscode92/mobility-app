@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar color="azulJectapp">
+
+    <ion-buttons end>
+      <button ion-button
+              icon-only
+              (click)="viewCtrl.dismiss(false)">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+    <ion-title *ngIf="dir.empresa.nombre">{{dir.empresa.nombre}} - {{dir.nombre}} </ion-title>
+    <ion-title *ngIf="!dir.empresa.nombre">{{dir.empresa}} - {{dir.nombre}} </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <agm-map
+          [latitude]="lat" [longitude]="lng"
+          [zoom]="10"
+          [styles]="styles"
+          [disableDefaultUI]="true">
+
+    <agm-kml-layer
+            *ngIf="dir"
+            [url]="urlRoutes">
+    </agm-kml-layer>
+
+  </agm-map>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "jectapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

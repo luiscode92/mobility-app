@@ -1,0 +1,75 @@
+<ion-menu [content]="NAV">
+
+	<ion-header>
+		<div style="height: 145px;" class="externo">
+			<div align="center">
+				<img [src]="getTakePhoto(this._up.user.img)" width="60" height="60" class="sideMenuAvatar" (click)="goToPage(pagePerfil)" menuClose><br>
+				<span class="sideMenuWelcome"><b>{{this._up.user.nombre}} </b></span><br>
+				<span class="sideMenuWelcome">{{this._up.user.email}}</span>
+			</div>
+		</div>
+	</ion-header>
+
+	<ion-content class="myBg">
+		<div class="color">
+			<ion-list no-padding>
+				<!--<button ion-item *ngFor="let pageUs of pagesUsuario" (click)="goToPage(pageUs.Component)" [menuClose]="pageUs.Component === false" [ngClass]="pageUs.classStyle" [hidden]="pageUs.activeButton === false">
+					<ion-icon item-left name="{{pageUs.icon}}"></ion-icon>
+					<ion-icon item-right name="{{pageUs.iconRigth}}"></ion-icon>
+					<b>{{pageUs.titulo}}</b>
+				</button>-->
+
+				<button ion-item menuClose
+						(click)="goToPage(homePage)" class="myBg">
+					<ion-icon item-left name="map"></ion-icon>
+					<b>Ir al mapa</b>
+				</button>
+
+				<button ion-item menuClose
+						(click)="goToPage(empresasPage)" class="myBg">
+					<ion-icon item-left name="bus"></ion-icon>
+					<b>Rutas de Transporte</b>
+				</button>
+
+				<button ion-item menuClose
+						(click)="goToPage(turismoPage)" class="myBg">
+					<ion-icon item-left name="book"></ion-icon>
+					<b>Turismo</b>
+				</button>
+
+				<!--<button ion-item
+						(click)="openSubMenus()" class="myBg">
+					<ion-icon item-left name="heart"></ion-icon>
+					<ion-icon item-right name="ios-arrow-down-outline"></ion-icon>
+					<b>Favoritos</b>
+				</button>-->
+
+				<button ion-item menuClose
+						(click)="goToPage(rutasFavoritas)" class="myBg2" [hidden]="activeSubmenus">
+					<ion-icon item-left name="heart"></ion-icon>
+					<b>Rutas Favoritas</b>
+				</button>
+
+				<button ion-item menuClose
+						(click)="goToPage(rutasFavoritas)" class="myBg2" [hidden]="activeSubmenus">
+					<ion-icon item-left name="heart"></ion-icon>
+					<b>Sitios Favoritos</b>
+				</button>
+
+				<!--<button ion-item menuClose
+						(click)="goToPage(compartirPage)" class="myBg">
+					<ion-icon item-left name="share"></ion-icon>
+					<b>Compartir</b>
+				</button>-->
+
+				<button ion-item menuClose
+	  				(click)="salir()" class="myBg">
+	  				<ion-icon item-left name="log-out"></ion-icon>
+					<b>Cerrar Sesión</b>
+	  			</button>
+			</ion-list>	
+		</div>	
+	</ion-content>
+</ion-menu>
+
+<ion-nav #NAV [root]="rootPage"></ion-nav>

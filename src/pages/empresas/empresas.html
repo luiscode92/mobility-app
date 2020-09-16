@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="azulJectapp">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="home()">
+        <img src="assets/recursos/jectapp-logo-esquina.png" />
+      </button>
+    </ion-buttons>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Rutas de Transporte
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card *ngFor="let dE of dataEmpresa" (click)="goToInfo(dE.nombre)" >
+
+    <ion-item>
+      <ion-avatar item-start>
+        <ion-icon name="bus" [color]="cambioColorRuta(dE.nombre)"></ion-icon>
+      </ion-avatar>
+      <h2><b>{{dE.nombre}}</b></h2>
+      <p>Popayán - Cauca</p>
+    </ion-item>
+
+    <img src="{{dE.imagen}}">
+
+    <ion-card-content>
+      <p>{{dE.informacion}}</p>
+    </ion-card-content>
+
+    <!--<ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small color="azulJectapp">
+          <ion-icon name="star"></ion-icon>
+          <div>Calificación</div>
+        </button>
+      </ion-col>
+    </ion-row>-->
+
+  </ion-card>
+
+</ion-content>

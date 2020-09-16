@@ -1,0 +1,139 @@
+page-login {
+
+	.datosUsuario{
+		position: absolute;
+		left: 60px; 
+		top: 200px;
+	}
+
+	.fondoInput{	
+		background-color:  #C9E6EE;
+	}
+
+	.inputColor{
+		color: #1F365B;
+		font-weight:bold;
+	}
+
+	.botonLogin{
+		color: white;
+		background: #1F365B;
+		float:none;
+		text-align:center;
+		margin: auto;
+		display: block;
+		width:100px;
+		height:50px;
+	}
+
+	.iconColor{
+		color: #1F365B;
+	}
+
+	.botonFacebook{
+		width:60px;
+		height:60px;
+		background-color:#3B5998;
+		margin: 5px;
+		padding:10px;
+		border-radius: 50px;
+		font-size:11px;
+		line-height:32px;
+		float:left;
+		display: inline-block;
+		border: 4px solid #1F365B;
+		background-image: url("../assets/recursos/facebook.png");
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.botonGamil{
+		width:60px;
+		height:60px;
+		border: 4px solid #b71c1c;
+		background-color:#DB4437;
+		margin: 5px;
+		padding:10px;
+		border-radius: 50px;
+		font-size:11px;
+		line-height:32px;
+		float:left;
+		display: inline-block;
+		background-image: url("../assets/recursos/gmail.png");
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.botonOlvidasteContrasena{
+		font-size:0.8em;
+		color:white;
+	}
+
+
+
+	#container {
+		width: 100%;
+		margin-left:auto;
+		margin-right: auto;
+		text-align: center;
+		overflow: auto;
+	}
+
+	#roundedUsername {
+		width: 100%;
+		height: auto;
+		background-color: #1F365B;
+		color: #ffffff;
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 10px;
+		margin-bottom: 10px;
+	}
+
+	#roundedPassword {
+		width: 100%;
+		height: auto;
+		background-color: #1F365B;
+		color: #ffffff;
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 10px;
+		margin-bottom: 10px;
+	}
+
+	.attrLabel {
+		padding-left: 10px;
+	}
+
+	.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+		color: #EFEBEB;
+	}
+
+	.iconLogo {
+		opacity: 0.9;
+		margin: 10px auto;
+		display: block
+	}
+
+	.scroll-content {
+		padding-bottom: 0!important;
+	}
+
+
+	#outer {
+		width: 100%;
+		text-align: center;
+	}
+
+	.innerF {
+		display: inline-block;
+	}
+
+	.innerG {
+		display: inline-block;
+	}
+
+
+
+
+}

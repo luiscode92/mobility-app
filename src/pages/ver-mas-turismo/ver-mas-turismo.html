@@ -1,0 +1,64 @@
+
+<ion-header>
+  <ion-navbar color="azulJectapp">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="home()">
+        <img src="assets/recursos/jectapp-logo-esquina.png" />
+      </button>
+    </ion-buttons>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <ion-card *ngFor="let m of markers">
+    <ion-slides pager>
+      <ion-slide *ngFor="let i of m.img">
+        <img src="{{i}}">
+      </ion-slide>
+    </ion-slides>
+    <ion-card-content>
+      <ion-card-title>
+        <b>{{m.label}}</b>
+      </ion-card-title>
+      <p ngClass="{{style}}" >
+        {{m.description}}
+      </p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <!--<ion-col>
+          <button ion-button clear small color="azulJectapp" icon-start>
+              <ion-icon name='star'></ion-icon>
+              Calificar
+          </button>
+      </ion-col>-->
+      <ion-col text-center *ngIf="status">
+        <button ion-button clear small color="azulJectapp" icon-start (click)="verMas()">
+          <ion-icon name="code-working"></ion-icon>
+          Ver Más
+        </button>
+      </ion-col>
+      <ion-col text-center *ngIf="status === false">
+        <button ion-button clear small color="azulJectapp" icon-start (click)="verMas()">
+          <ion-icon name="code-working"></ion-icon>
+          Ocultar
+        </button>
+      </ion-col>
+      <!--<ion-col text-right>
+          <button ion-button clear small color="azulJectapp" icon-start>
+              <ion-icon name='share-alt'></ion-icon>
+              Compartir
+          </button>
+      </ion-col>-->
+    </ion-row>
+
+  </ion-card>
+
+
+</ion-content>

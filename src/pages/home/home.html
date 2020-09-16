@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="azulJectapp">
+  	<ion-buttons end>
+        <button ion-button icon-only>
+          <img src="assets/recursos/jectapp-logo-esquina.png" />
+        </button>
+    </ion-buttons>
+    <button ion-button menuToggle icon-only>
+		<ion-icon name="menu"></ion-icon>
+  	</button>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <agm-map
+            [latitude]="lat" [longitude]="lng"
+            [zoom]="16"
+            [styles]="styles"
+            [disableDefaultUI]="true">
+
+        <!--<agm-kml-layer
+                *ngIf="dir"
+                [url]="urlRoutes">
+        </agm-kml-layer>-->
+
+        <!--<agm-direction  [origin]="dir.origin" [destination]="dir.destination"></agm-direction>-->
+
+        <agm-marker
+                *ngFor="let m of markers; let i = index"
+                (markerClick)="clickedMarker(m.label, i)"
+                [latitude]="m.lat"
+                [longitude]="m.lng"
+                [iconUrl]="m.icon"
+                [markerDraggable]="m.draggable"
+                (dragEnd)="markerDragEnd(m, $event)"
+                [visible]="dir === undefined">
+
+            <agm-info-window *ngIf="m.label !== 'position'">
+                <p class="titleInfo"><b>{{m.label}}</b></p>
+                <div class="center">
+                    <img *ngFor="let i of m.img" src="{{i}}" height="60" width="70" style="padding: 2px" imageViewer>
+                </div>
+                <button ion-button block color="secondary" (click)="goToVerMas(m)">Ver más</button>
+            </agm-info-window>
+
+        </agm-marker>
+    </agm-map>
+
+    <div class="datos4" align="center">
+        <button ion-button color="blanco" style="box-shadow: 1px 1px 1px 1px #83807F; width: 100%; font-size: 17px" round class="btnGo" (click)="abrirPage()">¿A donde quieres ir?</button>
+    </div>
+
+</ion-content>

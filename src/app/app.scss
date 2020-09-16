@@ -1,0 +1,96 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@import "../../node_modules/ionic2-auto-complete/auto-complete";
+
+.myBg{
+   background-color:#1F365B;
+   color: white;
+ }
+
+.myBg2{
+  background-color: #f53d3d;
+  color: white;
+}
+
+ .datos1{
+ 	position: relative;
+ }
+
+ .datos2{
+ 	position: absolute;
+ 	left: 110px;
+ 	top: 50px;
+ 	color: white;
+ 	font-size:0.7em;
+ }
+
+ .datos3{
+ 	position: relative;
+ }
+
+ .datos4{
+ 	position: relative; 
+ 	left: 25px;
+ 	top: 30px;
+ }
+
+.sideMenuAvatar{
+  border-radius: 100%;
+  margin-bottom: 7px;
+}
+
+.sideMenuWelcome {
+  font-size: 14px;
+  color: white;
+}
+
+.sideMenuProfile {
+  position: absolute;
+  padding-top: 25px;
+  color: #ffffff;
+  font-size: 13px;
+  width: 250px;
+}
+
+.sideMenuList {
+  color: #424242;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content, .item .item-content.active, .item .item-content.activated {
+border-color: white;
+background-color: #119EC8;
+}
+
+.list-md .item-block .item-inner {
+  border-bottom: unset;
+}
+.item-md.item-block .item-inner {
+  border-bottom: unset;
+}
+
+.externo {
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "621267829011",
+    "firebase_url": "https://jectapp-notification.firebaseio.com",
+    "project_id": "jectapp-notification",
+    "storage_bucket": "jectapp-notification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621267829011:android:28fd2fce4aabf589",
+        "android_client_info": {
+          "package_name": "com.softvation.jectapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621267829011-fqtie0o7qa801re4jlh6hfd4jg1ad516.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxZxLdT7krPDtFC7boGrmI3F2hTv4Lht8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

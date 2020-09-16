@@ -1,0 +1,66 @@
+<ion-content padding>
+
+	<img class="iconLogo" src="assets/recursos/logo_jectapp.png" height="40%" width="auto">
+
+	<div id="container">
+		<ion-list inset>
+
+			<ion-item id="roundedUsername">
+				<ion-label class="attrLabel"><ion-icon name="contact"></ion-icon> Email:</ion-label>
+				<ion-input type="text" [(ngModel)]="email"></ion-input>
+			</ion-item>
+
+			<ion-item id="roundedPassword">
+				<ion-label class="attrLabel"><ion-icon name="lock"></ion-icon> Contraseña:</ion-label>
+				<ion-input type="password" [(ngModel)]="password"></ion-input>
+			</ion-item>
+
+		</ion-list>
+
+		<div padding-right="10px" padding-left="10px">
+			<button ion-button icon-left color="azulJectapp" outline block
+					[disabled]="email.length < 4 || password.length < 4"
+					(click)="ingresar()">
+				<ion-icon name="arrow-dropright-circle"></ion-icon>
+				Iniciar Sesión
+			</button>
+			<button ion-button icon-left color="danger" block
+					(click)="googlePlusLogin()">
+				<ion-icon name="logo-googleplus"></ion-icon>
+				Iniciar Sesión
+			</button>
+		</div>
+
+		<br>
+
+		<div id="outer">
+			<!--<div class="innerF">
+				<button ion-button class="botonFacebook" (click)="fbLogin()"></button>
+			</div>-->
+			<!--<div class="innerG">
+				<button ion-button class="botonGamil" (click)="googlePlusLogin()"></button>
+			</div>-->
+
+		</div>
+
+	</div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="azulJectapp">
+     <button ion-button clear class="botonOlvidasteContrasena"
+     		  (click)="resetPass()">
+     	¿Olvidaste tu contraseña?
+     </button>
+    
+    <ion-buttons end>
+      <button ion-button icon-right color="royal"
+			  style="font-size: 11px"
+      		  (click)="crearCuenta()">
+        CREAR CUENTA
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-footer>

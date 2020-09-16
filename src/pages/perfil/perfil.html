@@ -1,0 +1,92 @@
+<ion-header>
+
+  <ion-navbar color="azulJectapp">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="home()">
+        <img src="assets/recursos/jectapp-logo-esquina.png" />
+      </button>
+    </ion-buttons>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Mi Perfil
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div style="background-image: url('assets/recursos/background-image.png'); background-size: 100% auto" no-padding align="center">
+
+    <div style="height: 220px; width: 100%">
+      <img type="file" [src]="takeImage(user.img)" class="imgRound" imageViewer/><br>
+    </div>
+
+  </div>
+
+  <button ion-button icon-left color="azulJectapp" style="width: 49%; height: 40px; margin: unset" (click)="getTakePicture()">
+    <ion-icon name="camera"></ion-icon>
+    Foto
+  </button>
+
+  <button ion-button icon-left color="danger" style="width: 50%; height: 40px; margin: unset" (click)="getGalleryPicture()">
+    <ion-icon name="images"></ion-icon>
+    Galeria
+  </button>
+
+  <div class="datosUsuario">
+
+    <form [formGroup]="myForm" (ngSubmit)="saveData()">
+      <ion-list>
+        <ion-item class="fondoInput">
+          <ion-label class="attrLabel"><ion-icon name="contact"></ion-icon> Nombres</ion-label>
+          <ion-input formControlName="nombre" type="text" class="inputColor" value="{{user.name}}"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="myForm.get('nombre').errors && myForm.get('nombre').dirty">
+          <p color="danger" ion-text *ngIf="myForm.get('nombre').hasError('required')">Campo requerido</p>
+          <p color="danger" ion-text *ngIf="myForm.get('nombre').hasError('minlength')">Ingresar minimo 6 caracteres</p>
+        </ion-item>
+
+        <br>
+
+        <ion-item class="fondoInput">
+          <ion-label class="attrLabel"><ion-icon name="contact"></ion-icon> Email</ion-label>
+          <ion-input formControlName="email" type="email" value="{{user.email}}" class="inputColor"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+          <p color="danger" ion-text *ngIf="myForm.get('email').hasError('required')">Campo requerido</p>
+          <p color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">No tiene formato de email</p>
+        </ion-item>
+        <br>
+
+        <ion-item class="fondoInput" *ngIf="statusPassword !== true">
+          <ion-label class="attrLabel"><ion-icon name="contact"></ion-icon> Contraseña</ion-label>
+          <ion-input formControlName="password" type="password" class="inputColor"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label><b>¿Deseas cambiar la contraseña?</b></ion-label>
+          <ion-checkbox (ionChange)="getChangePassword()" color="azulJectapp" checked="false"></ion-checkbox>
+        </ion-item>
+
+
+        <!--<ion-item *ngIf="myForm.get('password').errors && myForm.get('password').dirty">
+          <p color="danger" ion-text *ngIf="myForm.get('password').hasError('required')">Campo requerido</p>
+          <p color="danger" ion-text *ngIf="myForm.get('password').hasError('pattern')">No es una contraseña segura</p>
+        </ion-item>-->
+        <br>
+
+      </ion-list>
+      <div>
+        <button ion-button block type="submit" [disabled]="!myForm.valid" class="botonRegistro">Guardar</button>
+      </div>
+    </form>
+
+
+  </div>
+
+
+</ion-content>

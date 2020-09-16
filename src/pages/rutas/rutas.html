@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="azulJectapp">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="home()">
+        <img src="assets/recursos/jectapp-logo-esquina.png" />
+      </button>
+    </ion-buttons>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let dR of dataRuta">
+    <ion-list>
+      <button ion-item text-wrap (click)="goToMap(dR)">
+        <ion-icon name="bus" [color]="cambioColorRuta(dR.empresa.nombre)" item-start></ion-icon>
+        <b>RUTA: {{dR.nombre}}</b><br>
+        <b>BARRIOS: </b>{{dR.barrios}}
+      </button>
+    </ion-list>
+  </ion-card>
+
+  <ion-list *ngIf="statusEmphy" padding>
+    <p align="center" style="color: #e13838; font-size: 18px;"><b>No se han encontrado rutas registradas.</b></p>
+  </ion-list>
+
+
+</ion-content>
